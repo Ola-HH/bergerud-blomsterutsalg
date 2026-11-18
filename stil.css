@@ -230,25 +230,18 @@ h1 {
   max-width: 33rem;
 }
 
+/* Kolonnebreddene følger bildenes sideforhold, så de to blir like høye */
 .reise-bilder {
   grid-column: 2;
   grid-row: 1 / span 2;
-  position: relative;
-  padding-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 0.566fr 1.3fr;
+  align-items: start;
+  gap: 1rem;
 }
 
 .reise-bilder figure {
   position: relative;
-}
-
-.reise-bilder .for {
-  position: absolute;
-  bottom: 0;
-  left: -2rem;
-  z-index: 1;
-  width: 36%;
-  rotate: -3deg;
-  box-shadow: 0 12px 28px rgb(0 0 0 / 0.25);
 }
 
 .reise-bilder figcaption {
@@ -688,7 +681,6 @@ footer p {
   .reise-bilder {
     grid-column: 1;
     grid-row: auto;
-    margin-left: 1.5rem;
   }
 
   .band {

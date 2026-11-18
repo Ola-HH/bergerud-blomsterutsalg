@@ -8,11 +8,11 @@ const [apner, stenger] = tider[dag];
 
 let status;
 if (time < apner) {
-  status = `Åpner klokka ${apner} i dag`;
+  status = `Åpner ${apner} i dag`;
 } else if (time < stenger) {
   status = `Åpent nå til ${stenger}`;
 } else {
-  status = `Stengt nå, åpner ${tider[(dag + 1) % 7][0]} i morgen`;
+  status = `Åpner ${tider[(dag + 1) % 7][0]} i morgen`;
 }
 for (const felt of document.querySelectorAll('.idag')) {
   felt.textContent = status;
