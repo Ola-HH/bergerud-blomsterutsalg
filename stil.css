@@ -677,14 +677,26 @@ footer p {
     aspect-ratio: 4 / 3;
   }
 
+  /* Lappen legges over bildet på mobil, så den synes uten å havne bak hurtiglinja */
+  .forside-info {
+    margin-bottom: 1.5rem;
+  }
+
+  .forside-bilde {
+    display: flex;
+    flex-direction: column;
+  }
+
   .oppslag {
     position: relative;
+    z-index: 1;
+    order: -1;
     top: 0;
     right: 0;
     width: auto;
     max-width: 19rem;
-    margin: -2.5rem 0.5rem 0 auto;
-    translate: 0 -1.5rem;
+    margin: 0 0.25rem -1.5rem auto;
+    rotate: 1.5deg;
   }
 
   .reise,
