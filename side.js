@@ -71,14 +71,12 @@ for (const knapp of sesong.querySelectorAll('[data-velg]')) {
 const maned = oslo.getMonth();
 visSesong(maned >= 10 ? 'jul' : maned >= 8 ? 'host' : maned >= 5 ? 'sommer' : 'var');
 
-// I november og desember flyttes jula opp rett under forsiden og utvalget starter med julevarer. Ellers fjernes julebildene fra bildebåndet
+// I november og desember vises «I drivhuset nå» i stedet for det vanlige utvalget. Ellers fjernes julebildene fra bildebåndet
 const erJul = maned >= 10;
 for (const tekst of document.querySelectorAll('[data-tid]')) {
   tekst.hidden = tekst.dataset.tid !== (erJul ? 'jul' : 'ellers');
 }
-if (erJul) {
-  document.querySelector('.reise').before(sesong);
-} else {
+if (!erJul) {
   for (const bilde of document.querySelectorAll('.jul-bilde')) bilde.remove();
 }
 

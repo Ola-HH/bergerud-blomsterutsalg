@@ -90,6 +90,44 @@
     </div>
   </section>
 
+  <!-- Sortimentet i julesesongen. side.js viser det i november og desember -->
+  <section class="sortiment" data-tid="jul" hidden>
+    <div class="sortiment-topp">
+      <h2>I drivhuset nå</h2>
+      <p>Juleblomster fra eget gartneri og et drivhus fullt av julepynt.</p>
+    </div>
+    <ul class="sortiment-liste">
+      <li>
+        <img src="bilder/julestjerner.webp" width="480" height="640" loading="lazy" alt="Hvite mini-julestjerner på et benk i drivhuset, med en lapp der det står 29 kroner">
+        <h3>Julestjerner</h3>
+        <p>Rett fra gartneriet til Magne. Flergrenede julestjerner i rødt, hvitt og nye farger, og mini-julestjerner fra 29,-.</p>
+      </li>
+      <li class="sortiment-tekstkort">
+        <h3>Amaryllis</h3>
+        <p>Fra eget gartneri, sammen med azalea og juleroser. Flotte i stua gjennom hele desember, og fine å gi bort.</p>
+      </li>
+      <li>
+        <img src="bilder/krans.webp" width="960" height="1280" loading="lazy" alt="Krans av edelgran med kongler og røde bær">
+        <h3>Kranser og granbuketter</h3>
+        <p>Til døra, bordet og graven.</p>
+      </li>
+      <li>
+        <img src="bilder/julepynt.webp" width="960" height="1280" loading="lazy" alt="Kurver med julepynt og nisser på et rundt trebord">
+        <h3>Julepynt og nisser</h3>
+        <p>Nisser, kurver, julestrømper og pynt til hele huset.</p>
+      </li>
+      <li>
+        <img src="bilder/julegaver.webp" width="960" height="1280" loading="lazy" alt="Gaveesker, nisser, reinsdyr og et juletre på et hvitt bord">
+        <h3>Dekor og gaver</h3>
+        <p>Interiør til jula, gavekurver satt sammen etter ønske og gavekort.</p>
+      </li>
+      <li class="sortiment-tekstkort sortiment-var">
+        <h3>Til våren</h3>
+        <p>Da fyller vi drivhuset med sommerblomster og ampler fra eget gartneri, stauder, busker, frukttrær, urter og grønnsaksplanter.</p>
+      </li>
+    </ul>
+  </section>
+
   <section class="reise">
     <h2><span class="kjempe">200 meter</span> Lenger har ikke blomstene våre reist.</h2>
     <div class="reise-innhold">
@@ -112,17 +150,11 @@
 
   <hr class="skille">
 
-  <section class="utvalg">
+  <!-- Utvalget for resten av året. I november og desember vises «I drivhuset nå» øverst i stedet -->
+  <section class="utvalg" data-tid="ellers">
     <h2 class="skjult">Utvalget</h2>
-    <!-- side.js viser julevarianten i november og desember og den vanlige resten av året -->
-    <div data-tid="jul" hidden>
-      <p class="stor-tekst">Julestjerner, amaryllis, azalea og juleroser fra eget gartneri. Kranser og granbuketter. Julepynt, dekor og interiør. Orkideer og stueplanter.</p>
-      <p class="utvalg-merknad">Fra våren fyller vi drivhuset med sommerblomster og ampler fra eget gartneri, stauder, busker, frukttrær, urter og grønnsaksplanter.</p>
-    </div>
-    <div data-tid="ellers">
-      <p class="stor-tekst">Sommerblomster og ampler fra eget gartneri. Orkideer og stueplanter. Stauder, busker og frukttrær. Urter og grønnsaksplanter. Oliventrær, krukker, kurver og jord.</p>
-      <p class="utvalg-merknad">Utvalget skifter med årstidene og med det som er klart i gartneriet.</p>
-    </div>
+    <p class="stor-tekst">Sommerblomster og ampler fra eget gartneri. Orkideer og stueplanter. Stauder, busker og frukttrær. Urter og grønnsaksplanter. Oliventrær, krukker, kurver og jord.</p>
+    <p class="utvalg-merknad">Utvalget skifter med årstidene og med det som er klart i gartneriet.</p>
   </section>
 
   <div class="band">

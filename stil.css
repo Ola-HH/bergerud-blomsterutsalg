@@ -265,6 +265,85 @@ h1 {
   font-weight: 700;
 }
 
+/* I drivhuset nå (julesesongen) */
+
+.sortiment {
+  padding: 5.5rem var(--marg) 5rem;
+  background: #9c1e2a;
+  color: #fcf2e3;
+}
+
+.sortiment-topp {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.sortiment h2 {
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+}
+
+.sortiment-topp p {
+  max-width: 24rem;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.sortiment-liste {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sortiment-liste img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.sortiment h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.sortiment-liste p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.sortiment-tekstkort {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1.75rem;
+  background: #fcf2e3;
+  color: #9c1e2a;
+}
+
+.sortiment-tekstkort h3 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.sortiment-var {
+  background: none;
+  border: 2px solid rgb(252 242 227 / 0.5);
+  color: inherit;
+}
+
+.sortiment-var h3 {
+  font-size: 1.45rem;
+}
+
 /* 200 meter */
 
 .reise {
@@ -800,6 +879,35 @@ footer p {
 
   .helg {
     padding: 3.5rem var(--marg);
+  }
+
+  .sortiment {
+    padding: 3.5rem var(--marg);
+  }
+
+  .sortiment-liste {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
+  }
+
+  .sortiment h3 {
+    font-size: 1.2rem;
+  }
+
+  .sortiment-liste p {
+    font-size: 0.95rem;
+  }
+
+  .sortiment-tekstkort {
+    padding: 1.1rem;
+  }
+
+  .sortiment-tekstkort h3 {
+    font-size: 1.75rem;
+  }
+
+  .sortiment-var {
+    grid-column: 1 / -1;
   }
 
   .utvalg {
