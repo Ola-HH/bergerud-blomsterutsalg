@@ -17,7 +17,7 @@ Den gule lappen på forsiden er `<aside class="oppslag" data-til="2026-11-22">`.
 
 Årstidene bytter av seg selv etter måned. Tekst og bilder for hver årstid ligger i `sesong-panel` i `index.html`.
 
-I november og desember flytter `side.js` julepanelet opp rett under forsiden, viser julevarianten av utvalgsteksten (`data-tid="jul"`) og legger julebildene først i bildebåndet. Resten av året vises `data-tid="ellers"`.
+I november og desember flytter `side.js` julepanelet opp rett under forsiden, viser julevarianten av utvalgsteksten (`data-tid="jul"`) og beholder julebildene (`class="jul-bilde"`) først i bildebåndet. Resten av året fjernes de. Resten av året vises `data-tid="ellers"`.
 
 Kartet er et stillbilde fra Kartverket (`bilder/kart.webp`). Prikken plasseres med prosentverdiene i `.kart-merke` i `stil.css`, så de må regnes ut på nytt hvis kartutsnittet byttes.
 
