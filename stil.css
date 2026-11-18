@@ -230,7 +230,7 @@ h1 {
   max-width: 33rem;
 }
 
-/* Nå-bildet ligger oppå før-bildet, som stikker fram til venstre og nederst */
+/* Før-bildet ligger på skrå over venstre kant av nå-bildet */
 .reise-bilder {
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -246,14 +246,15 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
   width: 34%;
   rotate: -3deg;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.3);
 }
 
 .reise-bilder .na {
-  width: 78%;
+  width: 73%;
   margin-left: auto;
-  box-shadow: 0 12px 28px rgb(0 0 0 / 0.3);
 }
 
 .reise-bilder figcaption {
@@ -273,7 +274,7 @@ h1 {
   justify-content: space-between;
   align-items: end;
   gap: 2rem 4rem;
-  padding: 0 var(--marg) 6rem;
+  padding: 4.5rem var(--marg) 3.5rem;
 }
 
 .stor-tekst {
@@ -290,9 +291,15 @@ h1 {
   margin: 0;
 }
 
+.skille {
+  margin: 0 var(--marg);
+  border: 0;
+  border-top: 1px solid rgb(23 58 43 / 0.2);
+}
+
 .band {
   overflow: hidden;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 
 .band-spor {
@@ -697,7 +704,7 @@ footer p {
   .utvalg {
     flex-direction: column;
     align-items: start;
-    padding-bottom: 4rem;
+    padding: 3.5rem var(--marg) 2.5rem;
   }
 
   .reise-bilder {
@@ -706,7 +713,7 @@ footer p {
   }
 
   .band {
-    padding-bottom: 2.5rem;
+    padding-bottom: 4rem;
   }
 
   .sesong,
