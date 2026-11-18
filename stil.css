@@ -1,0 +1,391 @@
+@font-face {
+  font-family: "Young Serif";
+  src: url("fonter/young-serif.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("fonter/schibsted-grotesk.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+:root {
+  --papir: #f5f0e6;
+  --papir-mork: #eae2d0;
+  --blekk: #1f2a1e;
+  --gronn: #2d5a3a;
+  --gronn-mork: #223f2b;
+  --leire: #a8482a;
+  --strek: #d6ccb6;
+  /* Holder innholdet på maks 1120px, mens bakgrunnsfarger går helt ut til kanten */
+  --marg: max(24px, calc((100vw - 1120px) / 2));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--papir);
+  color: var(--blekk);
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+h1,
+h2,
+.navn,
+dt {
+  font-family: "Young Serif", Georgia, serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6.5vw, 4.25rem);
+  line-height: 1.04;
+  margin: 0 0 1.25rem;
+  max-width: 13ch;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--leire);
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+section {
+  padding: 4.5rem var(--marg);
+}
+
+.topp {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 1.5rem var(--marg);
+}
+
+.navn {
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+
+.topp nav {
+  display: flex;
+  gap: 1.75rem;
+  font-size: 1rem;
+}
+
+.topp nav a {
+  text-decoration: none;
+}
+
+.topp nav a:hover {
+  text-decoration: underline;
+}
+
+.forside {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.forside-tekst {
+  margin-bottom: 2.25rem;
+}
+
+.ingress {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  max-width: 34rem;
+}
+
+.idag {
+  color: var(--gronn);
+  font-weight: 600;
+  margin: 1.5rem 0 0;
+}
+
+.forside-bilde {
+  width: 100%;
+  aspect-ratio: 20 / 9;
+  object-fit: cover;
+}
+
+.om {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.om-tekst {
+  max-width: 30rem;
+  padding-top: 1rem;
+}
+
+.om-bilder {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.om-bilder figure:first-child {
+  margin-top: 4rem;
+}
+
+.jul {
+  background: var(--papir-mork);
+}
+
+.jul-innhold {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.oppslag {
+  border-left: 3px solid var(--leire);
+  padding-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+.jul-bilder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.jul-bilder img:nth-child(2) {
+  margin-top: 2.5rem;
+}
+
+.utvalg-intro {
+  max-width: 34rem;
+  margin-bottom: 2.5rem;
+}
+
+.utvalg-bilder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem 1.5rem;
+}
+
+.utvalg-bilder img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.lokalt {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  gap: 3.5rem;
+  align-items: start;
+  border-top: 1px solid var(--strek);
+}
+
+.lokalt-bilder {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.lokalt-bilder img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.aret {
+  border-top: 1px solid var(--strek);
+}
+
+.aret dl {
+  margin: 2rem 0 0;
+}
+
+.aret dl div {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--strek);
+}
+
+.aret dt {
+  font-size: 1.35rem;
+}
+
+.aret dd {
+  margin: 0;
+  max-width: 38rem;
+}
+
+.besok {
+  background: var(--gronn-mork);
+  color: var(--papir);
+  padding-bottom: 2rem;
+}
+
+.besok a:hover {
+  color: #f0c9a8;
+}
+
+.besok-innhold {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3.5rem;
+}
+
+.besok table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 24rem;
+  margin-bottom: 1.25rem;
+}
+
+.besok th,
+.besok td {
+  text-align: left;
+  font-weight: 400;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgb(245 240 230 / 0.25);
+}
+
+.besok td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.besok tr.i-dag th,
+.besok tr.i-dag td {
+  font-weight: 700;
+}
+
+.liten {
+  font-size: 0.95rem;
+  max-width: 24rem;
+  opacity: 0.85;
+}
+
+.besok-kart {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+}
+
+.besok-kart img,
+.besok-kart iframe {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  border: 0;
+  border-radius: 3px;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .forside {
+    padding-top: 1.5rem;
+  }
+
+  .forside-tekst {
+    margin-bottom: 2rem;
+  }
+
+  .ingress {
+    font-size: 1.15rem;
+  }
+
+  .forside-bilde {
+    aspect-ratio: 4 / 3;
+  }
+
+  .om,
+  .jul-innhold,
+  .lokalt,
+  .besok-innhold,
+  .besok-kart {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .utvalg-bilder,
+  .lokalt-bilder {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .om-bilder figure:first-child {
+    margin-top: 2rem;
+  }
+
+  .aret dl div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .besok-kart img,
+  .besok-kart iframe {
+    height: 16rem;
+  }
+}
