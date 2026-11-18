@@ -13,6 +13,8 @@ Nettsiden til blomsterutsalget i Hasleveien 51 på Dilling. Vanlig HTML og CSS u
 
 Åpningstidene står to steder og må endres begge steder. Tabellen ligger i `index.html`, og tallene som styrer teksten øverst på siden ligger i `side.js`.
 
+Enkeltdager med andre tider, som arrangementer, jul og helligdager, legges i `avvik` øverst i `side.js` (dato og tider, eller `null` for stengt). Da blir teksten «Åpent nå» / «Åpner … i morgen» riktig. Tabellen viser fortsatt de vanlige tidene, så si gjerne fra om avvikene i et oppslag eller en egen seksjon.
+
 Den gule lappen på forsiden er `<aside class="oppslag" data-til="2026-11-22">`. Den forsvinner av seg selv dagen etter datoen.
 
 Årstidene bytter av seg selv etter måned. Tekst og bilder for hver årstid ligger i `sesong-panel` i `index.html`.

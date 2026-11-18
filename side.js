@@ -1,22 +1,45 @@
 // Åpningstider per ukedag, søndag først. Må stemme med tabellen i index.html.
 const tider = [[12, 16], [10, 16], [10, 16], [10, 16], [10, 18], [10, 16], [10, 16]];
 
+// Dager med andre tider enn vanlig, for eksempel arrangementer og jul. Bruk null for stengt.
+// Gamle datoer kan stå, de brukes bare når datoen er i dag eller de neste dagene.
+const avvik = {
+  '2026-11-22': [11, 16],
+};
+
 const oslo = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Oslo' }));
 const dag = oslo.getDay();
 const time = oslo.getHours();
-const [apner, stenger] = tider[dag];
+
+function tiderFor(dato) {
+  const nokkel = dato.toLocaleDateString('sv-SE');
+  return nokkel in avvik ? avvik[nokkel] : tider[dato.getDay()];
+}
+
+const ukedager = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'];
+const idagTider = tiderFor(oslo);
+const apentNa = idagTider !== null && time >= idagTider[0] && time < idagTider[1];
 
 let status;
-if (time < apner) {
-  status = `Åpner ${apner} i dag`;
-} else if (time < stenger) {
-  status = `Åpent nå til ${stenger}`;
+if (idagTider !== null && time < idagTider[0]) {
+  status = `Åpner ${idagTider[0]} i dag`;
+} else if (apentNa) {
+  status = `Åpent nå til ${idagTider[1]}`;
 } else {
-  status = `Åpner ${tider[(dag + 1) % 7][0]} i morgen`;
+  status = 'Stengt nå';
+  for (let fram = 1; fram <= 7; fram++) {
+    const neste = new Date(oslo);
+    neste.setDate(oslo.getDate() + fram);
+    const nesteTider = tiderFor(neste);
+    if (nesteTider !== null) {
+      status = `Åpner ${nesteTider[0]} ${fram === 1 ? 'i morgen' : 'på ' + ukedager[neste.getDay()]}`;
+      break;
+    }
+  }
 }
 for (const felt of document.querySelectorAll('.idag')) {
   felt.textContent = status;
-  felt.classList.toggle('apent', time >= apner && time < stenger);
+  felt.classList.toggle('apent', apentNa);
 }
 
 for (const rad of document.querySelectorAll('tr[data-dag]')) {
