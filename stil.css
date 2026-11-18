@@ -203,7 +203,7 @@ h1 {
   grid-template-columns: 6fr 5fr;
   grid-template-rows: auto 1fr;
   gap: 2rem 5rem;
-  padding: 6.5rem var(--marg) 5rem;
+  padding: 6.5rem var(--marg) 0;
 }
 
 .reise h2 {
@@ -228,20 +228,35 @@ h1 {
 .reise-tekst {
   grid-column: 1;
   max-width: 33rem;
+  padding-bottom: 5rem;
 }
 
-/* Kolonnebreddene følger bildenes sideforhold, så de to blir like høye */
+/* Før-bildet ligger over det nederste hjørnet og stikker ned i neste seksjon */
 .reise-bilder {
   grid-column: 2;
   grid-row: 1 / span 2;
-  display: grid;
-  grid-template-columns: 0.566fr 1.3fr;
-  align-items: start;
-  gap: 1rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -3.5rem;
+  padding-bottom: 9rem;
 }
 
 .reise-bilder figure {
   position: relative;
+}
+
+.reise-bilder .na {
+  width: 82%;
+}
+
+.reise-bilder .for {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 34%;
+  rotate: 3deg;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.3);
 }
 
 .reise-bilder figcaption {
@@ -257,7 +272,9 @@ h1 {
 /* Utvalget */
 
 .utvalg {
-  padding: 1rem var(--marg) 4rem;
+  padding: 6.5rem var(--marg) 4rem;
+  background: var(--skog);
+  color: var(--lys);
 }
 
 .stor-tekst {
@@ -277,6 +294,7 @@ h1 {
 .band {
   overflow: hidden;
   padding-bottom: 6rem;
+  background: var(--skog);
 }
 
 .band-spor {
@@ -675,7 +693,15 @@ footer p {
   }
 
   .reise {
-    padding: 4rem var(--marg) 3rem;
+    padding: 4rem var(--marg) 0;
+  }
+
+  .reise-tekst {
+    padding-bottom: 0;
+  }
+
+  .utvalg {
+    padding-top: 6rem;
   }
 
   .reise-bilder {
