@@ -294,8 +294,8 @@ h1 {
 
 .sortiment-liste {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem 1.75rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -318,30 +318,6 @@ h1 {
 .sortiment-liste p {
   margin: 0;
   opacity: 0.9;
-}
-
-.sortiment-tekstkort {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 1.75rem;
-  background: #fcf2e3;
-  color: #9c1e2a;
-}
-
-.sortiment-tekstkort h3 {
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
-  margin-bottom: 0.75rem;
-}
-
-.sortiment-var {
-  background: none;
-  border: 2px solid rgb(252 242 227 / 0.5);
-  color: inherit;
-}
-
-.sortiment-var h3 {
-  font-size: 1.45rem;
 }
 
 /* 200 meter */
@@ -797,6 +773,13 @@ footer p {
   display: none;
 }
 
+/* Fem kort blir for smale på nettbrett */
+@media (max-width: 1100px) {
+  .sortiment-liste {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 800px) {
   body {
     font-size: 1.0625rem;
@@ -898,16 +881,14 @@ footer p {
     font-size: 0.95rem;
   }
 
-  .sortiment-tekstkort {
-    padding: 1.1rem;
+  /* Julestjernene får hele bredden, resten står to og to */
+  .sortiment-liste li:first-child {
+    grid-column: 1 / -1;
   }
 
-  .sortiment-tekstkort h3 {
-    font-size: 1.75rem;
-  }
-
-  .sortiment-var h3 {
-    font-size: 1.2rem;
+  .sortiment-liste li:first-child img {
+    aspect-ratio: 4 / 3;
+    object-position: 50% 100%;
   }
 
   .utvalg {
