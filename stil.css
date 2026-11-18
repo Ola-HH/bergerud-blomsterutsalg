@@ -906,8 +906,8 @@ footer p {
     font-size: 1.75rem;
   }
 
-  .sortiment-var {
-    grid-column: 1 / -1;
+  .sortiment-var h3 {
+    font-size: 1.2rem;
   }
 
   .utvalg {
