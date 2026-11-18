@@ -48,6 +48,17 @@ for (const knapp of sesong.querySelectorAll('[data-velg]')) {
 const maned = oslo.getMonth();
 visSesong(maned >= 10 ? 'jul' : maned >= 8 ? 'host' : maned >= 5 ? 'sommer' : 'var');
 
+// I november og desember flyttes jula opp rett under forsiden, og utvalget og bildebåndet starter med julevarer
+const erJul = maned >= 10;
+for (const tekst of document.querySelectorAll('[data-tid]')) {
+  tekst.hidden = tekst.dataset.tid !== (erJul ? 'jul' : 'ellers');
+}
+if (erJul) {
+  document.querySelector('main').prepend(sesong);
+  const band = document.querySelector('.band-spor');
+  band.prepend(...[...sesong.querySelectorAll('[data-panel="jul"] img')].map((bilde) => bilde.cloneNode()));
+}
+
 // Bildebåndet trenger to like rekker for å kunne rulle uten hopp
 const spor = document.querySelector('.band-spor');
 for (const bilde of [...spor.children]) {
