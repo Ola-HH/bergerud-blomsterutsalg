@@ -6,14 +6,16 @@ Nettsiden til blomsterutsalget i Hasleveien 51 på Dilling. Vanlig HTML og CSS u
 
 - `index.html` har all tekst og alle bilder
 - `stil.css` har farger, skrift og oppsett
-- `side.js` viser dagens åpningstid og skjuler oppslag som er gått ut på dato
+- `side.js` viser dagens åpningstid, velger årstid og skjuler oppslag som er gått ut på dato
 - `bilder/` og `fonter/` er det som lastes av siden
 
 ## Vanlige endringer
 
 Åpningstidene står to steder og må endres begge steder. Tabellen ligger i `index.html`, og tallene som styrer teksten øverst på siden ligger i `side.js`.
 
-Et oppslag med sluttdato skrives som `<p class="oppslag" data-til="2026-11-22">`. Det forsvinner av seg selv dagen etter.
+Den gule lappen på forsiden er `<aside class="oppslag" data-til="2026-11-22">`. Den forsvinner av seg selv dagen etter datoen.
+
+Årstidene bytter av seg selv etter måned. Tekst og bilder for hver årstid ligger i `sesong-panel` i `index.html`.
 
 Nye bilder bør være rundt 1000 piksler brede og lagres som webp i `bilder/`.
 

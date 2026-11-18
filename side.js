@@ -6,15 +6,18 @@ const dag = oslo.getDay();
 const time = oslo.getHours();
 const [apner, stenger] = tider[dag];
 
-let tekst;
+let status;
 if (time < apner) {
-  tekst = `I dag åpner vi klokka ${apner} og holder åpent til ${stenger}.`;
+  status = `Åpner klokka ${apner} i dag`;
 } else if (time < stenger) {
-  tekst = `Vi har åpent nå, fram til klokka ${stenger}.`;
+  status = `Åpent nå til ${stenger}`;
 } else {
-  tekst = `Vi har stengt for i dag. I morgen åpner vi klokka ${tider[(dag + 1) % 7][0]}.`;
+  status = `Stengt nå, åpner ${tider[(dag + 1) % 7][0]} i morgen`;
 }
-document.getElementById('idag').textContent = tekst;
+for (const felt of document.querySelectorAll('.idag')) {
+  felt.textContent = status;
+  felt.classList.toggle('apent', time >= apner && time < stenger);
+}
 
 for (const rad of document.querySelectorAll('tr[data-dag]')) {
   if (rad.dataset.dag.split(' ').includes(String(dag))) rad.classList.add('i-dag');
@@ -24,4 +27,31 @@ for (const rad of document.querySelectorAll('tr[data-dag]')) {
 const iDag = oslo.toLocaleDateString('sv-SE');
 for (const oppslag of document.querySelectorAll('[data-til]')) {
   if (iDag > oppslag.dataset.til) oppslag.hidden = true;
+}
+
+const sesong = document.querySelector('.sesong');
+
+function visSesong(navn) {
+  sesong.dataset.sesong = navn;
+  for (const knapp of sesong.querySelectorAll('[data-velg]')) {
+    knapp.setAttribute('aria-selected', knapp.dataset.velg === navn);
+  }
+  for (const panel of sesong.querySelectorAll('[data-panel]')) {
+    panel.hidden = panel.dataset.panel !== navn;
+  }
+}
+
+for (const knapp of sesong.querySelectorAll('[data-velg]')) {
+  knapp.addEventListener('click', () => visSesong(knapp.dataset.velg));
+}
+
+const maned = oslo.getMonth();
+visSesong(maned >= 10 ? 'jul' : maned >= 8 ? 'host' : maned >= 5 ? 'sommer' : 'var');
+
+// Bildebåndet trenger to like rekker for å kunne rulle uten hopp
+const spor = document.querySelector('.band-spor');
+for (const bilde of [...spor.children]) {
+  const kopi = bilde.cloneNode();
+  kopi.alt = '';
+  spor.append(kopi);
 }
