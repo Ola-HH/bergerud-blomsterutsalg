@@ -196,6 +196,75 @@ h1 {
   line-height: 1.15;
 }
 
+/* Arrangement til helgen */
+
+.helg {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: 2rem 5rem;
+  padding: 5.5rem var(--marg) 5rem;
+  background: var(--gul);
+  color: var(--skog);
+}
+
+.helg-dato {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.helg h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+}
+
+.helg-tider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 1.75rem 0 0;
+  font-size: 1.35rem;
+}
+
+.helg h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.pris-liste {
+  margin: 0 0 2.25rem;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid rgb(23 58 43 / 0.25);
+}
+
+.pris-liste:last-child {
+  margin-bottom: 0;
+}
+
+.pris-liste li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgb(23 58 43 / 0.25);
+}
+
+.pris {
+  font-size: 1.35rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.oppslag-lenke {
+  display: block;
+  margin-top: 0.6rem;
+  font-weight: 700;
+}
+
 /* 200 meter */
 
 .reise {
@@ -714,6 +783,7 @@ footer p {
     rotate: 1.5deg;
   }
 
+  .helg,
   .reise,
   .sesong,
   .mat,
@@ -726,6 +796,10 @@ footer p {
 
   .reise {
     padding: 4rem var(--marg) 3.5rem;
+  }
+
+  .helg {
+    padding: 3.5rem var(--marg);
   }
 
   .utvalg {

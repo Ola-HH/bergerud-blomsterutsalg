@@ -54,7 +54,7 @@ for (const tekst of document.querySelectorAll('[data-tid]')) {
   tekst.hidden = tekst.dataset.tid !== (erJul ? 'jul' : 'ellers');
 }
 if (erJul) {
-  document.querySelector('main').prepend(sesong);
+  document.querySelector('.reise').before(sesong);
 } else {
   for (const bilde of document.querySelectorAll('.jul-bilde')) bilde.remove();
 }
