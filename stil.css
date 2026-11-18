@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("fonter/bricolage-grotesque.woff2") format("woff2");
-  font-weight: 200 800;
-  font-stretch: 75% 100%;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Schibsted Grotesk";
   src: url("fonter/schibsted-grotesk.woff2") format("woff2");
   font-weight: 400 900;
@@ -50,23 +42,11 @@ img {
 }
 
 h1,
-h2,
-.merke,
-.stor-tekst,
-.sesong-valg button,
-.hva,
-.oppslag strong,
-figcaption {
-  font-family: "Bricolage Grotesque", "Schibsted Grotesk", sans-serif;
-  font-stretch: 80%;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-h1,
 h2 {
-  line-height: 0.95;
   margin: 0;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
@@ -151,22 +131,9 @@ figure {
 }
 
 .merke {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  font-stretch: 90%;
-  letter-spacing: 0;
-}
-
-.merke svg {
-  width: 1.7rem;
-  fill: none;
-  stroke: var(--rosa);
-  stroke-width: 2;
-  stroke-linejoin: round;
 }
 
 .status {
@@ -177,9 +144,9 @@ figure {
 }
 
 h1 {
-  margin: 3.5rem 0 2.25rem;
-  font-size: clamp(3.3rem, 11.6vw, 11.5rem);
-  line-height: 0.88;
+  margin: 4rem 0 1.75rem;
+  font-size: clamp(2.5rem, 6.2vw, 5.25rem);
+  line-height: 1;
   color: var(--rosa);
 }
 
@@ -225,8 +192,8 @@ h1 {
 .oppslag strong {
   display: block;
   margin-bottom: 0.35rem;
-  font-size: 1.45rem;
-  line-height: 1.05;
+  font-size: 1.2rem;
+  line-height: 1.15;
 }
 
 /* 200 meter */
@@ -235,28 +202,23 @@ h1 {
   display: grid;
   grid-template-columns: 6fr 5fr;
   grid-template-rows: auto 1fr;
-  gap: 2.5rem 4rem;
+  gap: 2rem 5rem;
   padding: 6.5rem var(--marg) 5rem;
 }
 
 .reise h2 {
   grid-column: 1;
-  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
-  font-stretch: 90%;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 .kjempe {
   display: block;
-  margin-bottom: 1.25rem;
-  font-size: clamp(4.2rem, 11.5vw, 10.5rem);
-  font-stretch: 80%;
-  font-weight: 800;
-  line-height: 0.82;
-  letter-spacing: -0.03em;
-  white-space: nowrap;
+  margin-bottom: 0.75rem;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .reise-innhold {
@@ -272,24 +234,19 @@ h1 {
   grid-column: 2;
   grid-row: 1 / span 2;
   position: relative;
-  padding-bottom: 3.5rem;
+  padding-bottom: 6rem;
 }
 
 .reise-bilder figure {
   position: relative;
 }
 
-.reise-bilder .na {
-  width: 76%;
-  margin-left: auto;
-}
-
 .reise-bilder .for {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: -2rem;
   z-index: 1;
-  width: 42%;
+  width: 36%;
   rotate: -3deg;
   box-shadow: 0 12px 28px rgb(0 0 0 / 0.25);
 }
@@ -298,41 +255,30 @@ h1 {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  padding: 0.2rem 0.65rem 0.25rem;
+  padding: 0.15rem 0.6rem;
   background: var(--lys);
-  font-size: 1.05rem;
-  font-stretch: 90%;
-  line-height: 1.2;
-  letter-spacing: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 /* Utvalget */
 
 .utvalg {
-  padding: 2rem var(--marg) 4rem;
+  padding: 1rem var(--marg) 4rem;
 }
 
 .stor-tekst {
+  max-width: 50rem;
   margin: 0;
-  font-size: clamp(1.9rem, 4.7vw, 4.1rem);
-  font-stretch: 85%;
-  font-weight: 700;
-  line-height: 1.14;
-}
-
-.stor-tekst img {
-  display: inline-block;
-  width: 1.65em;
-  height: 0.82em;
-  margin: 0 0.08em;
-  border-radius: 99px;
-  object-fit: cover;
-  vertical-align: -0.05em;
+  font-size: clamp(1.4rem, 2.5vw, 2.05rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
 }
 
 .utvalg-merknad {
   max-width: 30rem;
-  margin: 2rem 0 0;
+  margin: 1.5rem 0 0;
 }
 
 .band {
@@ -377,7 +323,7 @@ h1 {
 
 .sesong {
   display: grid;
-  grid-template-columns: 5fr 7fr;
+  grid-template-columns: 4fr 7fr;
   align-items: center;
   gap: 3rem;
   padding: 5.5rem var(--marg);
@@ -417,15 +363,18 @@ h1 {
   border: 0;
   background: none;
   color: inherit;
-  font-size: clamp(3.2rem, 9.5vw, 8.5rem);
-  line-height: 0.98;
-  opacity: 0.3;
+  font: inherit;
+  font-size: clamp(2.4rem, 5.2vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  opacity: 0.35;
   cursor: pointer;
   transition: opacity 0.2s;
 }
 
 .sesong-valg button:hover {
-  opacity: 0.65;
+  opacity: 0.7;
 }
 
 .sesong-valg button[aria-selected="true"] {
@@ -475,8 +424,8 @@ h1 {
 }
 
 .mat h2 {
-  margin-bottom: 1.75rem;
-  font-size: clamp(2.3rem, 4.6vw, 4rem);
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.75rem);
   color: var(--rosa);
 }
 
@@ -504,10 +453,10 @@ h1 {
 }
 
 .hva {
-  font-size: clamp(1.8rem, 3.7vw, 3.2rem);
-  font-stretch: 85%;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .fra {
@@ -519,36 +468,35 @@ h1 {
 
 .kaffe {
   display: grid;
-  grid-template-columns: 5fr 6fr;
-  align-items: end;
-  gap: 2.5rem 3rem;
-  padding: 5.5rem var(--marg) 0;
+  grid-template-columns: 7fr 5fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem var(--marg) 0;
   background: var(--rosa);
 }
 
 .kaffe-tekst {
-  display: contents;
+  padding-bottom: 5rem;
 }
 
 .kaffe h2 {
-  grid-column: 1 / -1;
-  font-size: clamp(3rem, 9.4vw, 9rem);
-  line-height: 0.9;
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
 }
 
 .kaffe p {
-  align-self: start;
   max-width: 27rem;
   margin: 0;
-  padding-bottom: 3rem;
   font-size: 1.2rem;
 }
 
 .kaffe img {
+  justify-self: end;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  max-width: 26rem;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  clip-path: var(--gavl);
+  clip-path: polygon(0 13%, 50% 0, 100% 13%, 100% 100%, 0 100%);
 }
 
 /* Besøk */
@@ -563,15 +511,15 @@ h1 {
 }
 
 .besok h2 {
-  margin-bottom: 1.75rem;
-  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
 
 .besok table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1.25rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
 .besok th,
@@ -614,17 +562,61 @@ h1 {
 .besok-kart {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-.besok-kart img,
-.besok-kart iframe {
+.besok-kart > img {
   width: 100%;
-  height: 24rem;
-  border: 0;
+  height: 100%;
   border-radius: 4px;
   object-fit: cover;
+}
+
+.kart {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.kart img {
+  width: 100%;
+}
+
+/* Plasseringen er regnet ut fra koordinatene til Hasleveien 51 i kartutsnittet */
+.kart-merke {
+  position: absolute;
+  top: 73.59%;
+  left: 43.14%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem 0.25rem 0.3rem;
+  border-radius: 99px;
+  background: var(--skog);
+  color: var(--lys);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  translate: -0.75rem -50%;
+}
+
+.kart-merke::before {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--rosa);
+}
+
+.kart small {
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.3rem;
+  padding: 0 0.3rem;
+  background: rgb(255 255 255 / 0.8);
+  font-size: 0.7rem;
 }
 
 footer {
@@ -654,7 +646,7 @@ footer p {
   }
 
   h1 {
-    margin: 2.5rem 0 1.5rem;
+    margin: 2.5rem 0 1.25rem;
   }
 
   .forside-info {
@@ -698,6 +690,7 @@ footer p {
   .reise-bilder {
     grid-column: 1;
     grid-row: auto;
+    margin-left: 1.5rem;
   }
 
   .band {
@@ -718,7 +711,7 @@ footer p {
   }
 
   .sesong-valg button {
-    font-size: 2.9rem;
+    font-size: 2rem;
   }
 
   .mat-liste li {
@@ -745,17 +738,20 @@ footer p {
     padding-top: 4rem;
   }
 
-  .kaffe p {
+  .kaffe-tekst {
     padding-bottom: 0;
+  }
+
+  .kaffe img {
+    justify-self: center;
   }
 
   .besok table {
     font-size: 1.15rem;
   }
 
-  .besok-kart img,
-  .besok-kart iframe {
-    height: 16rem;
+  .besok-kart > img {
+    height: 14rem;
   }
 
   footer {

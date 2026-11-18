@@ -17,6 +17,8 @@ Den gule lappen på forsiden er `<aside class="oppslag" data-til="2026-11-22">`.
 
 Årstidene bytter av seg selv etter måned. Tekst og bilder for hver årstid ligger i `sesong-panel` i `index.html`.
 
+Kartet er et stillbilde fra Kartverket (`bilder/kart.webp`). Prikken plasseres med prosentverdiene i `.kart-merke` i `stil.css`, så de må regnes ut på nytt hvis kartutsnittet byttes.
+
 Nye bilder bør være rundt 1000 piksler brede og lagres som webp i `bilder/`.
 
 ## Se siden lokalt
