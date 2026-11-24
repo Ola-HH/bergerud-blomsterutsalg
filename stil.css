@@ -995,6 +995,10 @@ footer p {
     padding-bottom: 0;
   }
 
+  .kaffe-bilder {
+    grid-template-columns: 1fr;
+  }
+
   .kaffe > img {
     justify-self: center;
   }
