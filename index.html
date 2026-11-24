@@ -77,43 +77,22 @@
     <aside class="oppslag" data-til="2026-12-06">
       <strong>Julemarked i drivhuset</strong>
       Lørdag 5. og søndag 6. desember. Nissen kommer, og fjorten utstillere selger gaver, strikk, smykker, te, honning og keramikk.
-      <a class="oppslag-lenke" href="#helgen">Se hvem som kommer</a>
+      <a class="oppslag-lenke" href="#julemarked">Se hvem som kommer</a>
     </aside>
   </div>
 </header>
 
 <main>
 
-  <!-- Arrangementet forsvinner av seg selv dagen etter datoen i data-til -->
-  <section class="helg" id="helgen" data-til="2026-12-06">
-    <div class="helg-topp">
-      <p class="helg-dato">Lørdag 5. og søndag 6. desember</p>
-      <h2>Julebutikk og julemarked</h2>
-      <p>Gjør julehandelen i et julepyntet gartneri. Du kan handle alle juleblomstene fra gartneriet, og ta med gavelista, for i drivhuset står utstillere med gaver, interiør og håndarbeid.</p>
-      <p>Nissen er her fra 12 til 14 begge dager. Ta gjerne bilde med ham, eller hvisk ham et ønske i øret.</p>
-      <p class="helg-tider"><span>Lørdag <strong>11–16</strong></span><span>Søndag <strong>12–16</strong></span></p>
-      <p>Vil du stå på markedet? Send oss en melding på <a href="https://www.facebook.com/p/Bergerud-Blomsterutsalg-61576494479571/">Facebook</a>, så sjekker vi om det er mer ledig plass.</p>
-    </div>
-    <div class="helg-tilbud">
-      <h3>Med på markedet</h3>
-      <ul class="pris-liste">
-        <li><span>Me&amp;Wilma</span><span>Interiør, gaver, julepynt, kurver og vesker</span></li>
-        <li><span>Tehagen</span><span>Te, tilbehør og andre fristelser</span></li>
-        <li><span>Dehn Design</span><span>Sjal og ullplagg</span></li>
-        <li><span>britaUnik</span><span>Håndstrikkede votter, luer og hatter</span></li>
-        <li><span>studio2run</span><span>Keramikk</span></li>
-        <li><span>Garnsjappa</span><span>Garn</span></li>
-        <li><span>Forever Living</span><span>Aloe vera-produkter</span></li>
-        <li><span>Nordre Kaabbel gård</span><span>Honning og saueskinn</span></li>
-        <li><span>SmåBlå</span><span>Hjemmelagde barneklær</span></li>
-        <li><span>Victoria</span><span>Strikk</span></li>
-        <li><span>Henriette</span><span>Strikk og litt av hvert</span></li>
-        <li><span>The Stone Edit</span><span>Håndlagde smykker i naturstein</span></li>
-        <li><span>Alina Gajewska</span><span>Heklede produkter</span></li>
-        <li><span>Beate Thalberg</span><span>Sydde «julepølser», syltet rødløk, gelé og mer</span></li>
-      </ul>
-    </div>
-  </section>
+  <!-- Menyen viser én del av siden om gangen (side.js). Uten JavaScript vises alt -->
+  <nav class="faner" aria-label="Innhold">
+    <a href="#utvalget">Utvalget</a>
+    <a href="#julemarked" data-til="2026-12-06">Julemarked</a>
+    <a href="#om-oss">Om oss</a>
+    <a href="#besok">Besøk oss</a>
+  </nav>
+
+  <div class="fane" id="utvalget">
 
   <!-- Sortimentet i julesesongen. side.js viser det i november og desember -->
   <section class="sortiment" data-tid="jul" hidden>
@@ -206,28 +185,6 @@
     </ul>
   </section>
 
-  <section class="reise">
-    <h2><span class="kjempe">200 meter</span> Lenger har ikke blomstene våre reist.</h2>
-    <div class="reise-innhold">
-      <div class="reise-tekst">
-        <p>Gartneriet har røtter i Moss som går over 130 år tilbake, og Magne Bergerud er tredje generasjon på gården i Rygge. Til vanlig sendes blomstene herfra til grossister og butikkjeder.</p>
-        <p>Våren 2026 ryddet vi et av veksthusene fra 1972 og åpnet dørene. Nå kan du handle blomstene der de har vokst opp.</p>
-      </div>
-      <div class="reise-bilder">
-        <figure class="for">
-          <img src="bilder/veksthus-tomt.webp" width="720" height="1273" loading="lazy" alt="Det tomme veksthuset før ombyggingen">
-          <figcaption>Før</figcaption>
-        </figure>
-        <figure class="na">
-          <img src="bilder/na.webp" width="900" height="692" loading="lazy" alt="Det samme veksthuset med et oliventre i krukke og bord fulle av blomster langs gangen">
-          <figcaption>Nå</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <hr class="skille">
-
   <!-- Utvalget for resten av året. I november og desember vises «I drivhuset nå» øverst i stedet -->
   <section class="utvalg" data-tid="ellers">
     <h2 class="skjult">Utvalget</h2>
@@ -297,6 +254,65 @@
     </div>
   </section>
 
+  </div>
+
+  <div class="fane" id="julemarked" data-til="2026-12-06">
+
+  <!-- Arrangementet forsvinner av seg selv dagen etter datoen i data-til -->
+  <section class="helg">
+    <div class="helg-topp">
+      <p class="helg-dato">Lørdag 5. og søndag 6. desember</p>
+      <h2>Julebutikk og julemarked</h2>
+      <p>Gjør julehandelen i et julepyntet gartneri. Du kan handle alle juleblomstene fra gartneriet, og ta med gavelista, for i drivhuset står utstillere med gaver, interiør og håndarbeid.</p>
+      <p>Nissen er her fra 12 til 14 begge dager. Ta gjerne bilde med ham, eller hvisk ham et ønske i øret.</p>
+      <p class="helg-tider"><span>Lørdag <strong>11–16</strong></span><span>Søndag <strong>12–16</strong></span></p>
+      <p>Vil du stå på markedet? Send oss en melding på <a href="https://www.facebook.com/p/Bergerud-Blomsterutsalg-61576494479571/">Facebook</a>, så sjekker vi om det er mer ledig plass.</p>
+    </div>
+    <div class="helg-tilbud">
+      <h3>Med på markedet</h3>
+      <ul class="pris-liste">
+        <li><span>Me&amp;Wilma</span><span>Interiør, gaver, julepynt, kurver og vesker</span></li>
+        <li><span>Tehagen</span><span>Te, tilbehør og andre fristelser</span></li>
+        <li><span>Dehn Design</span><span>Sjal og ullplagg</span></li>
+        <li><span>britaUnik</span><span>Håndstrikkede votter, luer og hatter</span></li>
+        <li><span>studio2run</span><span>Keramikk</span></li>
+        <li><span>Garnsjappa</span><span>Garn</span></li>
+        <li><span>Forever Living</span><span>Aloe vera-produkter</span></li>
+        <li><span>Nordre Kaabbel gård</span><span>Honning og saueskinn</span></li>
+        <li><span>SmåBlå</span><span>Hjemmelagde barneklær</span></li>
+        <li><span>Victoria</span><span>Strikk</span></li>
+        <li><span>Henriette</span><span>Strikk og litt av hvert</span></li>
+        <li><span>The Stone Edit</span><span>Håndlagde smykker i naturstein</span></li>
+        <li><span>Alina Gajewska</span><span>Heklede produkter</span></li>
+        <li><span>Beate Thalberg</span><span>Sydde «julepølser», syltet rødløk, gelé og mer</span></li>
+      </ul>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="fane" id="om-oss">
+
+  <section class="reise">
+    <h2><span class="kjempe">200 meter</span> Lenger har ikke blomstene våre reist.</h2>
+    <div class="reise-innhold">
+      <div class="reise-tekst">
+        <p>Gartneriet har røtter i Moss som går over 130 år tilbake, og Magne Bergerud er tredje generasjon på gården i Rygge. Til vanlig sendes blomstene herfra til grossister og butikkjeder.</p>
+        <p>Våren 2026 ryddet vi et av veksthusene fra 1972 og åpnet dørene. Nå kan du handle blomstene der de har vokst opp.</p>
+      </div>
+      <div class="reise-bilder">
+        <figure class="for">
+          <img src="bilder/veksthus-tomt.webp" width="720" height="1273" loading="lazy" alt="Det tomme veksthuset før ombyggingen">
+          <figcaption>Før</figcaption>
+        </figure>
+        <figure class="na">
+          <img src="bilder/na.webp" width="900" height="692" loading="lazy" alt="Det samme veksthuset med et oliventre i krukke og bord fulle av blomster langs gangen">
+          <figcaption>Nå</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="mat">
     <div class="mat-tekst">
       <h2>Mat fra gårdene rundt oss</h2>
@@ -346,6 +362,10 @@
     </div>
   </section>
 
+  </div>
+
+  <div class="fane" id="besok">
+
   <section class="besok">
     <div class="besok-tider">
       <h2>Åpningstider</h2>
@@ -378,6 +398,8 @@
       </a>
     </div>
   </section>
+
+  </div>
 
 </main>
 

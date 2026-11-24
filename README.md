@@ -17,6 +17,8 @@ Enkeltdager med andre tider, som arrangementer, jul og helligdager, legges i `av
 
 Den gule lappen på forsiden er `<aside class="oppslag" data-til="2026-11-22">`. Den forsvinner av seg selv dagen etter datoen.
 
+Under forsiden ligger en meny (`<nav class="faner">`) som viser én del av siden om gangen. Hver del er en `<div class="fane" id="...">` i `index.html`, og menypunktet lenker til id-en, for eksempel `#besok`. Julemarkedet har `data-til` både på menypunktet og på delen, så begge forsvinner etter datoen. Nye arrangementer legges inn på samme måte.
+
 Årstidene bytter av seg selv etter måned. Tekst og bilder for hver årstid ligger i `sesong-panel` i `index.html`.
 
 I november og desember viser `side.js` seksjonen «I drivhuset nå» (`class="sortiment"`, `data-tid="jul"`) i stedet for det vanlige utvalget (`data-tid="ellers"`), og beholder julebildene (`class="jul-bilde"`) først i bildebåndet. Resten av året fjernes julebildene. Kortene i «I drivhuset nå» redigeres direkte i `index.html`.

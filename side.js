@@ -88,3 +88,28 @@ for (const bilde of [...spor.children]) {
   kopi.alt = '';
   spor.append(kopi);
 }
+
+// Menyen viser én del av siden om gangen. Deler som er skjult fordi datoen er passert, er ikke med
+const meny = document.querySelector('.faner');
+const faner = [...document.querySelectorAll('.fane')].filter((fane) => !fane.hidden);
+const toppAvMeny = () => meny.parentElement.offsetTop;
+
+function visFane(id, rull) {
+  if (!faner.some((fane) => fane.id === id)) id = faner[0].id;
+  for (const fane of faner) fane.hidden = fane.id !== id;
+  for (const lenke of meny.querySelectorAll('a')) {
+    if (lenke.hash === '#' + id) lenke.setAttribute('aria-current', 'page');
+    else lenke.removeAttribute('aria-current');
+  }
+  if (rull && scrollY > toppAvMeny()) scrollTo(0, toppAvMeny());
+}
+
+for (const lenke of meny.querySelectorAll('a')) {
+  lenke.addEventListener('click', (hendelse) => {
+    hendelse.preventDefault();
+    history.replaceState(null, '', lenke.hash);
+    visFane(lenke.hash.slice(1), true);
+  });
+}
+addEventListener('hashchange', () => visFane(location.hash.slice(1), true));
+visFane(location.hash.slice(1), false);

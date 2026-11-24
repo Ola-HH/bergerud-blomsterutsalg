@@ -196,6 +196,48 @@ h1 {
   line-height: 1.15;
 }
 
+/* Menyen. Står fast øverst og viser én del av siden om gangen */
+
+.faner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 2.5rem;
+  padding: 0 var(--marg);
+  overflow-x: auto;
+  background: var(--skog);
+  border-top: 1px solid rgb(251 250 244 / 0.15);
+  color: var(--lys);
+  scrollbar-width: none;
+}
+
+.faner a {
+  padding: 1.1rem 0 0.9rem;
+  border-bottom: 3px solid transparent;
+  color: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.faner a:hover {
+  opacity: 1;
+}
+
+.faner a[aria-current] {
+  border-bottom-color: var(--rosa);
+  color: var(--rosa);
+  opacity: 1;
+}
+
+.fane {
+  scroll-margin-top: 4rem;
+}
+
 /* Arrangement til helgen */
 
 .helg {
@@ -445,12 +487,6 @@ h1 {
 .utvalg-merknad {
   max-width: 17rem;
   margin: 0;
-}
-
-.skille {
-  margin: 0 var(--marg);
-  border: 0;
-  border-top: 1px solid rgb(23 58 43 / 0.2);
 }
 
 .band {
@@ -901,6 +937,15 @@ footer p {
 
   .sortiment {
     padding: 3.5rem var(--marg);
+  }
+
+  .faner {
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .faner a {
+    font-size: 1rem;
   }
 
   .sortiment-liste {
