@@ -35,4 +35,6 @@ python3 -m http.server
 
 ## Publisering
 
-Siden ligger på Vercel på https://bergerudblomsterutsalg.no og oppdateres når noe pushes til `main`. Domenet er registrert hos Gigahost, der DNS-postene som peker til Vercel ligger.
+Siden ligger på Vercel. Endringer går først til `beta`, som vises på https://beta.bergerudblomsterutsalg.no, og publiseres ved å ta `beta` inn i `main`, som vises på https://bergerudblomsterutsalg.no. Fremgangsmåten står i `CLAUDE.md`. Betasiden har `noindex` via `vercel.json`, så den ikke dukker opp på Google.
+
+Domenet er registrert hos Gigahost, der DNS-postene som peker til Vercel ligger.
