@@ -196,46 +196,102 @@ h1 {
   line-height: 1.15;
 }
 
-/* Menyen. Står fast øverst og viser én del av siden om gangen */
+/* Menyen oppe til høyre. Knappen står fast når du ruller */
 
-.faner {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.meny-knapp {
+  position: fixed;
+  top: 1rem;
+  right: var(--marg);
+  z-index: 20;
   display: flex;
-  gap: 2.5rem;
-  padding: 0 var(--marg);
-  overflow-x: auto;
-  background: var(--skog);
-  border-top: 1px solid rgb(251 250 244 / 0.15);
-  color: var(--lys);
-  scrollbar-width: none;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--rosa);
+  color: var(--skog);
+  font: inherit;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
 }
 
-.faner a {
-  padding: 1.1rem 0 0.9rem;
-  border-bottom: 3px solid transparent;
+/* Tre streker som blir til et kryss når menyen er åpen */
+.meny-knapp::before {
+  content: "";
+  width: 1.1rem;
+  height: 0.75rem;
+  background: linear-gradient(currentColor 0 0) top / 100% 2px no-repeat, linear-gradient(currentColor 0 0) center / 100% 2px no-repeat, linear-gradient(currentColor 0 0) bottom / 100% 2px no-repeat;
+}
+
+.meny-knapp[aria-expanded="true"]::before {
+  height: 1.1rem;
+  background: linear-gradient(45deg, transparent 45%, currentColor 45% 55%, transparent 55%), linear-gradient(-45deg, transparent 45%, currentColor 45% 55%, transparent 55%);
+}
+
+.meny-knapp:focus-visible,
+.meny a:focus-visible {
+  outline: 3px solid var(--skog);
+  outline-offset: 3px;
+}
+
+.meny {
+  position: fixed;
+  top: 4.25rem;
+  right: var(--marg);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  width: min(20rem, calc(100vw - 40px));
+  padding: 0.5rem 1.25rem 1rem;
+  border-radius: 8px;
+  background: var(--lys);
+  color: var(--skog);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.25);
+}
+
+.meny[hidden] {
+  display: none;
+}
+
+.meny > a {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgb(23 58 43 / 0.15);
   color: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-decoration: none;
-  white-space: nowrap;
-  opacity: 0.7;
-  transition: opacity 0.2s;
 }
 
-.faner a:hover {
-  opacity: 1;
+.meny > a:hover {
+  color: #9c1e2a;
 }
 
-.faner a[aria-current] {
-  border-bottom-color: var(--rosa);
-  color: var(--rosa);
-  opacity: 1;
+.meny-sosialt {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.9rem;
 }
 
-.fane {
-  scroll-margin-top: 4rem;
+.meny-sosialt a {
+  color: inherit;
+}
+
+.tilbake {
+  margin: 0;
+  padding: 2.5rem var(--marg) 3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.tilbake a {
+  color: inherit;
+}
+
+/* Plass til menyknappen ved siden av «Åpent nå» */
+.status {
+  margin-right: 7.5rem;
 }
 
 /* Arrangement til helgen */
@@ -939,13 +995,12 @@ footer p {
     padding: 3.5rem var(--marg);
   }
 
-  .faner {
-    justify-content: space-between;
-    gap: 1.25rem;
+  .meny-knapp {
+    top: 0.9rem;
   }
 
-  .faner a {
-    font-size: 1rem;
+  .meny {
+    top: 3.9rem;
   }
 
   .sortiment-liste {

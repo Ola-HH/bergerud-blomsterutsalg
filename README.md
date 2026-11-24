@@ -17,7 +17,7 @@ Enkeltdager med andre tider, som arrangementer, jul og helligdager, legges i `av
 
 Den gule lappen på forsiden er `<aside class="oppslag" data-til="2026-11-22">`. Den forsvinner av seg selv dagen etter datoen.
 
-Under forsiden ligger en meny (`<nav class="faner">`) som viser én del av siden om gangen. Hver del er en `<div class="fane" id="...">` i `index.html`, og menypunktet lenker til id-en, for eksempel `#besok`. Julemarkedet har `data-til` både på menypunktet og på delen, så begge forsvinner etter datoen. Nye arrangementer legges inn på samme måte.
+Siden har tre deler, hver i en `<div class="fane" id="...">` i `index.html`: forsiden (`#forsiden`), åpningstider og adresse (`#besok`) og om oss (`#om-oss`). Menyknappen oppe til høyre (`.meny-knapp` og `<nav class="meny">`) bytter mellom dem, og lenker til noe inne på forsiden, som `#julemarked` og `#utvalget`, ruller dit. Julemarkedet har `data-til` både på menypunktet og på seksjonen, så begge forsvinner etter datoen. Nye arrangementer legges inn på samme måte.
 
 Årstidene bytter av seg selv etter måned. Tekst og bilder for hver årstid ligger i `sesong-panel` i `index.html`.
 

@@ -89,27 +89,47 @@ for (const bilde of [...spor.children]) {
   spor.append(kopi);
 }
 
-// Menyen viser én del av siden om gangen. Deler som er skjult fordi datoen er passert, er ikke med
-const meny = document.querySelector('.faner');
-const faner = [...document.querySelectorAll('.fane')].filter((fane) => !fane.hidden);
-const toppAvMeny = () => meny.parentElement.offsetTop;
+// Siden har tre deler: forsiden, åpningstider og om oss. Menyen oppe til høyre bytter mellom dem
+const knapp = document.querySelector('.meny-knapp');
+const meny = document.querySelector('.meny');
+const deler = [...document.querySelectorAll('.fane')];
 
-function visFane(id, rull) {
-  if (!faner.some((fane) => fane.id === id)) id = faner[0].id;
-  for (const fane of faner) fane.hidden = fane.id !== id;
-  for (const lenke of meny.querySelectorAll('a')) {
-    if (lenke.hash === '#' + id) lenke.setAttribute('aria-current', 'page');
-    else lenke.removeAttribute('aria-current');
-  }
-  if (rull && scrollY > toppAvMeny()) scrollTo(0, toppAvMeny());
+function apneMeny(apen) {
+  meny.hidden = !apen;
+  knapp.setAttribute('aria-expanded', apen);
 }
 
-for (const lenke of meny.querySelectorAll('a')) {
+// Viser delen som id-en hører til, og ruller dit. Et arrangement der datoen er passert gir forsiden
+function visDel(id, rull) {
+  let mal = id ? document.getElementById(id) : null;
+  if (mal && mal.closest('[data-til]')?.hidden) mal = null;
+  const del = mal?.closest('.fane') ?? deler[0];
+  for (const d of deler) d.hidden = d !== del;
+  if (!rull) return;
+  if (mal && mal !== deler[0]) mal.scrollIntoView();
+  else scrollTo(0, 0);
+}
+
+knapp.hidden = false;
+knapp.addEventListener('click', () => apneMeny(meny.hidden));
+addEventListener('keydown', (hendelse) => {
+  if (hendelse.key === 'Escape' && !meny.hidden) {
+    apneMeny(false);
+    knapp.focus();
+  }
+});
+addEventListener('click', (hendelse) => {
+  if (!meny.hidden && !meny.contains(hendelse.target) && !knapp.contains(hendelse.target)) apneMeny(false);
+});
+
+for (const lenke of document.querySelectorAll('a[href^="#"]')) {
   lenke.addEventListener('click', (hendelse) => {
     hendelse.preventDefault();
-    history.replaceState(null, '', lenke.hash);
-    visFane(lenke.hash.slice(1), true);
+    const id = lenke.hash.slice(1);
+    history.replaceState(null, '', id === 'forsiden' ? location.pathname : lenke.hash);
+    apneMeny(false);
+    visDel(id, true);
   });
 }
-addEventListener('hashchange', () => visFane(location.hash.slice(1), true));
-visFane(location.hash.slice(1), false);
+addEventListener('hashchange', () => visDel(location.hash.slice(1), true));
+visDel(location.hash.slice(1), location.hash.length > 1);
