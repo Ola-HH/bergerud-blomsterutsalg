@@ -641,7 +641,7 @@ h1 {
 .kaffe {
   display: grid;
   grid-template-columns: 7fr 5fr;
-  align-items: center;
+  align-items: end;
   gap: 3rem;
   padding: 5rem var(--marg) 0;
   background: var(--rosa);
@@ -662,7 +662,27 @@ h1 {
   font-size: 1.2rem;
 }
 
-.kaffe img {
+.kaffe p + p {
+  margin-top: 1rem;
+}
+
+.kaffe-bilder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.kaffe .kaffe-bilder img {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  clip-path: none;
+}
+
+.kaffe > img {
   justify-self: end;
   width: 100%;
   max-width: 28rem;
@@ -975,7 +995,7 @@ footer p {
     padding-bottom: 0;
   }
 
-  .kaffe img {
+  .kaffe > img {
     justify-self: center;
   }
 
