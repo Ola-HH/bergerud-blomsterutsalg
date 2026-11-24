@@ -227,6 +227,10 @@ h1 {
   font-size: 1.35rem;
 }
 
+.helg-tider + p {
+  margin-top: 1.5rem;
+}
+
 .helg h3 {
   margin: 0 0 0.5rem;
   font-size: 1.35rem;
@@ -251,6 +255,15 @@ h1 {
   gap: 1.5rem;
   padding: 0.7rem 0;
   border-top: 1px solid rgb(23 58 43 / 0.25);
+}
+
+.helg-tilbud .pris-liste li span:last-child {
+  text-align: right;
+  opacity: 0.85;
+}
+
+.helg-tilbud .pris-liste li span:first-child {
+  font-weight: 700;
 }
 
 .pris {

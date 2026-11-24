@@ -5,6 +5,7 @@ const tider = [[12, 16], [10, 16], [10, 16], [10, 16], [10, 18], [10, 16], [10, 
 // Gamle datoer kan stå, de brukes bare når datoen er i dag eller de neste dagene.
 const avvik = {
   '2026-11-22': [11, 16],
+  '2026-12-05': [11, 16],
 };
 
 const oslo = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Oslo' }));
