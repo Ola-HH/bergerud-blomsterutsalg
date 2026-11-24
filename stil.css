@@ -136,6 +136,11 @@ figure {
   font-weight: 700;
 }
 
+.merke a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .status {
   display: flex;
   gap: 1.75rem;
