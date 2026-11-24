@@ -35,6 +35,4 @@ python3 -m http.server
 
 ## Publisering
 
-Siden ligger på Vercel og oppdateres når noe pushes til `main`.
-
-Linja `<meta name="robots" content="noindex">` i `index.html` hindrer at siden dukker opp på Google. Fjern den når siden er klar for alle.
+Siden ligger på Vercel på https://bergerudblomsterutsalg.no og oppdateres når noe pushes til `main`. Domenet er registrert hos Gigahost, der DNS-postene som peker til Vercel ligger.
