@@ -639,16 +639,8 @@ h1 {
 /* Kaffe */
 
 .kaffe {
-  display: grid;
-  grid-template-columns: 7fr 5fr;
-  align-items: end;
-  gap: 3rem;
-  padding: 5rem var(--marg) 0;
+  padding: 5rem var(--marg);
   background: var(--rosa);
-}
-
-.kaffe-tekst {
-  padding-bottom: 5rem;
 }
 
 .kaffe h2 {
@@ -673,20 +665,11 @@ h1 {
   margin-top: 2rem;
 }
 
-.kaffe .kaffe-bilder img {
+.kaffe-bilder img {
   width: 100%;
-  max-width: none;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 4px;
-  clip-path: none;
-}
-
-.kaffe > img {
-  justify-self: end;
-  width: 100%;
-  max-width: 28rem;
-  clip-path: polygon(0 11%, 50% 0, 100% 11%, 100% 100%, 0 100%);
 }
 
 /* Besøk */
@@ -934,7 +917,6 @@ footer p {
   }
 
 
-
   .utvalg {
     flex-direction: column;
     align-items: start;
@@ -988,19 +970,11 @@ footer p {
   }
 
   .kaffe {
-    padding-top: 4rem;
-  }
-
-  .kaffe-tekst {
-    padding-bottom: 0;
+    padding: 4rem var(--marg);
   }
 
   .kaffe-bilder {
     grid-template-columns: 1fr;
-  }
-
-  .kaffe > img {
-    justify-self: center;
   }
 
   .besok table {
