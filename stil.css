@@ -904,6 +904,17 @@ footer p {
   opacity: 0.75;
 }
 
+footer .fot-sosialt {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.fot-sosialt a {
+  color: var(--rosa);
+}
+
 .hurtiglinje {
   display: none;
 }
