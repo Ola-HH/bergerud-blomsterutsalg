@@ -828,11 +828,6 @@ h1 {
   color: var(--skog);
 }
 
-.liten {
-  font-size: 0.95rem;
-  opacity: 0.8;
-}
-
 .besok-adresse .knapper {
   margin: 1.75rem 0;
 }
