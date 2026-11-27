@@ -299,33 +299,6 @@ h1 {
   margin-right: 7.5rem;
 }
 
-/* Årets ansatt */
-
-.ansatt {
-  padding: 3.5rem var(--marg);
-  background: var(--rosa);
-  color: var(--skog);
-  text-align: center;
-}
-
-.ansatt-tittel {
-  margin: 0 0 0.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.ansatt h2 {
-  margin: 0 0 1rem;
-  font-size: clamp(2.2rem, 4.8vw, 3.75rem);
-}
-
-.ansatt p:last-child {
-  max-width: 32rem;
-  margin: 0 auto;
-  font-size: 1.2rem;
-}
-
 /* Arrangement til helgen */
 
 .helg {
